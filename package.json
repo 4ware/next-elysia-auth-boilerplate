@@ -1,0 +1,27 @@
+{
+  "name": "myapp",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "bun --cwd apps/web dev",
+    "dev:api": "bun --cwd apps/api dev",
+    "dev:all": "concurrently \"bun run dev\" \"bun run dev:api\"",
+    "db:generate": "bun --cwd packages/db generate",
+    "db:migrate": "bun --cwd packages/db migrate",
+    "db:studio": "bun --cwd packages/db studio",
+    "build": "bun --cwd apps/web build",
+    "build:api": "bun --cwd apps/api build",
+    "test": "bun run test:unit && bun run test:e2e",
+    "test:unit": "concurrently \"bun --cwd apps/web test\" \"bun --cwd packages/elysia test\"",
+    "test:unit:web": "bun --cwd apps/web test",
+    "test:unit:elysia": "bun --cwd packages/elysia test",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:debug": "playwright test --debug",
+    "test:coverage": "concurrently \"bun --cwd apps/web test:coverage\" \"bun --cwd packages/elysia test:coverage\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0",
+    "@playwright/test": "^1.61.1"
+  }
+}

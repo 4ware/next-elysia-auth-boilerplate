@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Next.js
+.next/
+out/
+dist/
+
+# Build
+*.tsbuildinfo
+
+# Misc
+.DS_Store
+*.pem
+npm-debug.log*
+
+# Drizzle
+drizzle/meta
+
+# Playwright
+e2e/.auth/
+e2e/reports/
+playwright-report/
+test-results/

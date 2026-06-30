@@ -1,0 +1,19 @@
+{
+  "name": "@myapp/auth",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "dependencies": {
+    "better-auth": "^1.2.8",
+    "@better-auth/passkey": "^1.6.23",
+    "@myapp/db": "workspace:*",
+    "@myapp/env": "workspace:*",
+    "drizzle-orm": "^0.44.0",
+    "@neondatabase/serverless": "^1.0.0",
+    "@simplewebauthn/server": "^13.1.1"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^22"
+  }
+}
